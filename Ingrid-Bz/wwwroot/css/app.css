@@ -1,0 +1,19 @@
+.top-row {
+    background-color: rgba(22, 34, 57, 0.95);
+}
+.sidebar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f5a425;
+    font-weight: bold;
+}
+.sidebar {
+    background: none !important;
+    background-color: #0c1228 !important;
+}
+.navbar-brand .brand-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
