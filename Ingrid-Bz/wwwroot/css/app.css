@@ -1,0 +1,70 @@
+body {
+    background-color: #343a40;
+    color: #e6e6e6;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+    overflow: auto;
+}
+body, html {
+    height: 100%;
+}
+/* top-row inside main */
+main .top-row {
+    background-color: rgba(22, 34, 57, 0.95);
+}
+.sidebar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #f5a425;
+    font-weight: bold;
+}
+.sidebar {
+    background: none !important;
+    background-color: #0c1228 !important;
+}
+.navbar-brand .brand-icon {
+    width: 24px;
+    height: 24px;
+}
+.page {
+    flex: 1;
+    display: flex;
+}
+main {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1;
+    overflow-y: auto;
+}
+#app {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.ingrid-footer {
+    position: sticky;
+    bottom: 0;
+    background-color: #0c1228;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 0.5rem 0; /* smaller padding */
+    font-size: 0.85rem; /* slightly smaller */
+    letter-spacing: 0.3px; /* tighter spacing */
+    font-weight: 600; /* less bold */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
+    .ingrid-footer span {
+        padding: 0 2px; /* tighter spacing */
+    }
+.footer-white {
+    color: #e0e0e0;
+}
+.footer-orange {
+    color: #f5a425;
+    text-shadow: 0 0 4px rgba(245, 164, 37, 0.4);
+}
