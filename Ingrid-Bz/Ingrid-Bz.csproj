@@ -9,4 +9,8 @@
     <UserSecretsId>5775d6a1-45e4-4211-8041-028f6e5843df</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Blazor.Core" Version="33.2.15" />
+  </ItemGroup>
+
 </Project>

@@ -1,11 +1,17 @@
-﻿@page "/account"
-@inject Services.AppSettings Settings
+﻿@page "/test"
+@using Microsoft.AspNetCore.Components.Authorization
 
-<PageTitle>@Title - Account</PageTitle>
+<PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
-
-<h3>Sample Section Title</h3>
+<AuthorizeView>
+    <Authorized>
+        <h3>Sample Section Title</h3>
+    </Authorized>
+    <NotAuthorized>
+        <p>You are not authorized to view this content.</p>
+    </NotAuthorized>
+</AuthorizeView>
 <p>
 Ingrid‑Bz is designed to support long‑form content without breaking the visual structure of the application. This sample text exists purely to help you verify how the layout behaves when the content grows beyond the height of the viewport. As you scroll, you should observe how the sidebar remains fixed, how the top‑row stays anchored at the top, and how the footer behaves depending on your chosen layout mode. The goal is to ensure that the reading experience remains smooth, predictable, and visually consistent across different devices.
 </p>
@@ -24,12 +30,3 @@ As you continue scrolling, pay attention to how the footer behaves. Depending on
 <p>
 Long content also helps reveal how the application performs on different screen sizes. On mobile devices, the viewport height changes dynamically as the browser chrome appears and disappears. On desktop, the viewport is more stable but may be affected by browser toolbars, bookmarks bars, or window resizing. This paragraph ensures that your layout is tested across a variety of conditions.
 </p>
-
-@code
-{
-    string Title;
-    protected override void OnInitialized()
-    {
-        Title = $"{Settings.ApplicationName}";
-    }
-}
