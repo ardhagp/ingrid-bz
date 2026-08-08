@@ -7,11 +7,31 @@ body {
 }
 body, html {
     height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0b1c2d; /* your blueprint background base */
 }
+
 /* top-row inside main */
 main .top-row {
-    background-color: rgba(22, 34, 57, 0.95);
+    /* background-color: rgba(22, 34, 57, 0.95);*/
+    background-color: #003366 !important; /* deep blue */
+    color: #ffffff !important;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0.75rem 1rem;
 }
+/* Links inside the top row */
+.top-row a {
+    color: #ffffff !important; /* brighter blue */
+    font-weight: 600;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+    /* Hover effect */
+    .top-row a:hover {
+        color: #ffffff !important; /* Ingrid orange accent */
+    }
 .sidebar .navbar-brand {
     display: flex;
     align-items: center;
@@ -28,6 +48,8 @@ main .top-row {
     height: 24px;
 }
 .page {
+    padding: 0 !important;
+    margin: 0 !important;
     flex: 1;
     display: flex;
 }
@@ -35,6 +57,10 @@ main {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 100% !important;
+    margin: 0;
+    padding: 0;
 }
 .content {
     flex: 1;
@@ -67,4 +93,58 @@ main {
 .footer-orange {
     color: #f5a425;
     text-shadow: 0 0 4px rgba(245, 164, 37, 0.4);
+}
+
+.landing-container {
+    background: #0b1c2d url('img/blueprint-bg.png') center/cover no-repeat;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.landing-content {
+    max-width: 600px;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    opacity: 0.85;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    color: #ff8c00;
+}
+
+.btn-login {
+    background-color: #28a745;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+    .btn-login:hover {
+        background-color: #218838;
+    }
+
+/* Remove container limits if using Bootstrap */
+.container,
+.container-fluid {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
