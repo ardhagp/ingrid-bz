@@ -1,3 +1,7 @@
+/* this is app.css is stored in the wwwroot/css folder and is loaded in app.razor.
+ * for anlysis, it will renamed from app.css to ingrixbz_app.css.txt  
+*/
+
 body {
     background-color: #343a40;
     color: #e6e6e6;
@@ -147,4 +151,14 @@ main {
     max-width: 100% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers vertically */
+    align-items: center; /* centers horizontally */
+    height: 66vh; /* full screen height */
+    text-align: center;
+    color: #ffffff;
 }
