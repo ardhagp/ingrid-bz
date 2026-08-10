@@ -3,8 +3,9 @@
     for analysis, it will be renamed from Index.razor to ingridbz_Index.razor.txt
 -->
 @page "/"
+@inject Services.AppSettings Settings
 
-<PageTitle></PageTitle>
+<PageTitle>@Settings.ApplicationName</PageTitle>
 
 <div class="landing-container">
     <div class="landing-content text-center">
@@ -21,10 +22,18 @@
     </div>
 </div>
 
-@code 
+@code
 {
+    string Title = "Loading...";
+
+    protected override void OnInitialized()
+    {
+        Title = $"{Settings.ApplicationName}";
+    }
     private void Login()
     {
         // NavigationManager.NavigateTo("login");
     }
+
+    
 }
