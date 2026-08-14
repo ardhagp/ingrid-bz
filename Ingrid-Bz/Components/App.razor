@@ -1,4 +1,5 @@
-﻿<!--
+﻿@using Microsoft.AspNetCore.Components.Authorization
+<!--
     This App.razor is stored in Components.
     for analysis, it will be renamed from App.razor to ingridbz_App.razor.txt
 -->
@@ -31,7 +32,9 @@
 </head>
 
 <body>
+    <CascadingAuthenticationState>
     <Routes />
+    </CascadingAuthenticationState>
     <script src="_framework/blazor.web.js"></script>
 </body>
 

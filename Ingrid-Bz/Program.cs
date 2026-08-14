@@ -6,6 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// This builder is to add the authentication and authorization services to the DI container
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorizationCore();
+
 builder.Services.AddScoped<AppSettings>();
 var app = builder.Build();
 
@@ -18,9 +23,11 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-
 app.UseAntiforgery();
+
+// This is to activate the authentication and authorization middleware in the request pipeline
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
