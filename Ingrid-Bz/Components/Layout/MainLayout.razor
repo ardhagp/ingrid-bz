@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@inject Services.AppSettings Settings
 
 <div id="app">
 <div class="page">
@@ -20,7 +21,9 @@
 
     <footer class="ingrid-footer">
         <span class="footer-white">ARDHAGP |</span>
-        <span class="footer-orange">INGRID BZ v1.00</span>
+        <span class="footer-orange">INGRID BZ</span>
+        <span class="footer-white">| </span>
+        <span class="footer-orange">VER @Settings.varMajor.@Settings.varMinor.@Settings.varBuild</span>
         <span class="footer-white">| 2026</span>
     </footer>
 </div>
