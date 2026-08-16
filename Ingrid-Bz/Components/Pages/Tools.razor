@@ -1,6 +1,13 @@
 ﻿@page "/tools"
-<h3>Tools</h3>
+@inject Services.AppSettings Settings
 
-@code {
+<h3>@Title - Tools</h3>
 
+@code
+{
+    string Title ="";
+    protected override void OnInitialized()
+    {
+        Title = $"{Settings.ApplicationName}";
+    }
 }

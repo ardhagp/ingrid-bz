@@ -1,6 +1,13 @@
 ﻿@page "/about"
-<h3>About</h3>
+@inject Services.AppSettings Settings
 
-@code {
+<h3>@Title - About</h3>
 
+@code
+{
+    string Title = "";
+    protected override void OnInitialized()
+    {
+        Title = $"{Settings.ApplicationName}";
+    }
 }
