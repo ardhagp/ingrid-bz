@@ -2,35 +2,50 @@
 @inject Services.AppSettings Settings
 
 <div id="app">
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+    <div class="page">
+        <div class="sidebar">
+            <NavMenu />
+        </div>
 
-    <main>
+        <main>
+            <div>
+                <!-- Account Dropdown button, this button will be showed after logged in -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        My Account
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="profile">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Change Password</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
             <div class="top-row px-4">
-                <a href="account">My Account</a>
-                <a href="account">Login / Register</a>
+                <a href="#">Login</a>
             </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+            <article class="content px-4">
+                @Body
+            </article>
+        </main>
     </div>
-
-    <footer class="ingrid-footer">
-        <span class="footer-white">ARDHAGP |</span>
-        <span class="footer-orange">INGRID BZ</span>
-        <span class="footer-white">| </span>
-        <span class="footer-orange">VER @Settings.Major.@Settings.Minor.@Settings.Build</span>
-        <span class="footer-white">| 2026</span>
-    </footer>
 </div>
-
+<footer class="ingrid-footer">
+    <span class="footer-white">ARDHAGP |</span>
+    <span class="footer-orange">INGRID BZ</span>
+    <span class="footer-white">| @DevelopmentYear |</span>
+    <span class="footer-orange">VER @Settings.Major.@Settings.Minor.@Settings.Build</span>
+</footer>
 <div id="blazor-error-ui" data-nosnippet>
     An unhandled error has occurred.
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
 
+@code
+{
+    readonly string DevelopmentYear = Services.Function.GetDevelopmentYear(2026);
+
+}
