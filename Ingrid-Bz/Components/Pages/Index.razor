@@ -1,5 +1,8 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 @inject Services.AppSettings Settings
+@inject NavigationManager NavigationManager
+
 
 <PageTitle>@Settings.ApplicationName</PageTitle>
 
@@ -11,23 +14,15 @@
                 ACCESS <span class="highlight">YOUR TOOLS</span> NOW!
             </h2>
 
-            <button class="btn btn-login" >
-                Login
-            </button>
+            <button class="btn btn-blue" @onclick="Login">Login</button>
         </div>
     </div>
 </div>
 
 @code
 {
-    string Title = "Loading...";
-
-    protected override void OnInitialized()
-    {
-        Title = $"{Settings.ApplicationName}";
-    }
     private void Login()
     {
-        // NavigationManager.NavigateTo("login");
+        NavigationManager.NavigateTo("/login");
     }    
 }
